@@ -1,8 +1,14 @@
 import tensorflow as tf
 import numpy as np
 from create_sentiment_features import create_feature_sets_and_labels
-train_x,train_y,test_x,test_y = create_feature_sets_and_labels('pos.txt','neg.txt')
-print "data read and prepared"
+
+import os
+
+pos = os.path.join("/opt/neuralnetclass/data","pos.txt")
+neg = os.path.join("/opt/neuralnetclass/data","neg.txt")
+print pos
+train_x,train_y,test_x,test_y = create_feature_sets_and_labels(pos,neg)
+#train_x,train_y,test_x,test_y = create_feature_sets_and_labels('pos.txt','neg.txt')print "data read and prepared"
 n_nodes_hl1 = 500
 n_nodes_hl2 = 500
 n_nodes_hl3 = 500

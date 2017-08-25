@@ -53,8 +53,8 @@ def sample_handling(sample, lexicon, classification):
 def create_feature_sets_and_labels(pos,neg,test_size=0.1):
 	lexicon = create_lexicon(pos,neg)
 	features = []
-	features += sample_handling('pos.txt',lexicon,[1,0])					
-	features += sample_handling('neg.txt',lexicon,[0,1])					
+	features += sample_handling(pos,lexicon,[1,0])					
+	features += sample_handling(neg,lexicon,[0,1])					
 	random.shuffle(features)
 	features = np.array(features)
 
